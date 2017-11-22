@@ -1,0 +1,48 @@
+<div class="container text-center">
+      <main role="main">
+
+        <div class="jumbotron mb-5">
+          <h1 class="display-3">Hamburguer Mania</h1>
+          <p class="lead">Please eat as many burgers as you want. Also feel free to regurgitate them!</p>
+          <img src="/assets/img/3burguers.png" class="img-fluid" alt="Responsive image">
+        </div>
+
+        <div class="row marketing">
+          <div class="col-lg-6">
+            <h1>Not Devoured</h1>
+              {{#each burgers}}
+                {{#unless devoured}}
+                  {{> burgers/burger-block devoured=true}}
+                {{/unless}}
+              {{/each}}
+          </div>
+
+          <div class="col-lg-6">
+            <h1>Devoured</h1>
+              {{#each burgers}}
+                {{#if devoured}}
+                  {{> burgers/burger-block devoured=false}}
+                {{/if}}
+              {{/each}}  
+          </div>
+        </div>
+
+        <div class="row marketing mt-5 mb-5 justify-content-md-center">
+          <div class="col-lg-6">
+            <form class="form-inline" id="add-burger">
+              <div class="form-group mx-sm-3">
+                <label for="burger-name" class="sr-only">New Burger</label>
+                <input type="text" class="form-control" id="burger-name" placeholder="Burger Name">
+              </div>
+              <button type="submit" class="btn btn-success" id="add-burger-btn">Add New Burger</button>
+            </form>
+          </div>
+        </div>
+
+      </main>
+
+      <footer class="footer">
+        <p>&copy; Joao Paulo Alexandre de Oliveira 2017</p>
+      </footer>
+
+</div> <!-- /container -->
